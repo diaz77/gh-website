@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Webpage</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Fa-bars, etc.-->
+    <script type ="text/javascript" src = "scripts.js"></script>
+</head>
+
+<body>
+    <div class = "caption">
+        <span class = "border">Hi, I'm Daniel</span>
+    </div>
+
+    <!-- Button 1st -->
+    <div class = container>
+    <button class = "modal-button" href = "#myModal1">About Me</button>
+
+    <!-- Modal 1st -->
+    <div id = "myModal1" class = "modal">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src = "square-station.JPG" />
+                <span class = "header-text">About Me </span>
+            </div>
+            <div class="modal-body">
+                <p> Hi, I'm Daniel Diaz, a recent University of Texas at Austin graudate in Computer Sciences.
+                    After graduating during COVID-19, I'm eager to pick up on new skills and find my fit in your company. </br>
+                    Though I specialized in machine learning, I'm fluent in Javascript, C, Python, HTML/CSS, Matlab, Java, and even Haskell! </br>
+                    While I'm not programming, I love taking long bike rides and finding something new to cook. </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Button 2nd -->
+    <button class = "modal-button" href = "#myModal2">My Projects</button>
+
+
+    <!-- Modal 2nd -->
+    <div id = "myModal2" class = "modal">
+
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <img src = "project_icon2.png" />
+                <span class = "header-text">My Projects </span>
+            </div>
+            <div class = "modal-body">
+                <div>Throughout my degree and now afterwards, I've worked on many projects! Here are some. <br>
+                    <ul class = "a">
+                        <li> FrogBot, a Discord bot with some fun commands </li>
+                        <li> My webpage, a fun exercise in HTML, CSS, and Javascript</li>
+                        <li> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Button 3rd -->
+    <button class = "modal-button" href = "#myModal3">Contact Me</button>
+    </div>
+
+    <!-- Modal 2nd -->
+    <div id = "myModal3" class = "modal">
+
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <img src = "email.png" />
+                <span class = "header-text">Contact Me </span>
+            </div>
+            <div class = "modal-body">
+                <span> I can be contacted through any of the following: <br>
+                <ul class = "a">
+                    <li> My UT Email, </li>
+                    <li> My Personal Email, or</li>
+                    <li> LinkedIn </li>
+                </ul>
+            </span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
+
+<script>
+// Get the button that opens the modal
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
+}
+</script>
